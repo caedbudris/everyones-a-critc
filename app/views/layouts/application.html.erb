@@ -3,6 +3,7 @@
 <head>
   <title>EAC || <%= yield(:title) %></title>
   <link href='https://fonts.googleapis.com/css?family=Istok+Web' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Fugaz+One' rel='stylesheet' type='text/css'>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
@@ -10,6 +11,5 @@
 <body>
 <%= render 'layouts/header' %>
 <%= yield %>
-
 </body>
 </html>

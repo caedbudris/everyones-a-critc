@@ -1,0 +1,31 @@
+<%= provide(:title, 'Add a Movie') %>
+<div class = "form">
+    <h1>Add a Movie</h1>
+    <%= form_for(@movie, html: { multipart: true }) do |m| %>
+    <ul>
+        <li>
+            <%= m.label :title %>
+            <%= m.text_field :title %>
+        </li>
+    
+        <li>
+            <%= m.label :picture %>
+            <%= m.file_field :picture, accept: 'image/jpeg,image/gif,image/png' %>
+        </li>
+        
+        <li>
+            <%= m.label :category %>
+            <%= m.select(:category, options_for_select([['Drama', 'drama'], ['Comedy', 'comedy'], ['Documentary', 'documentary'], ['Thriller', 'thriller'], 
+                                                ['Sci-Fi', 'sci-fi'], ['Adventure', 'adventure'], ['Mystery', 'mystery'], ['Action', 'action'], ['Romance', 'romance']])) %>
+        </li>
+    
+        <li>
+            <%= m.label :description %>
+            <%= m.text_area :description, size: "48x16" %>
+        </li>
+    
+        <li>
+            <%= m.submit "Add Movie" %>
+        </li>
+    <% end %>
+</div>

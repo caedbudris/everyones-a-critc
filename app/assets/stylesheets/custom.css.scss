@@ -47,9 +47,65 @@ html body {
             padding-left:100px;
         }
     }
+    .lowerh {
+        > ul {
+            margin:0;
+            text-align:center;
+            background-color:#990000;
+            height:50px; 
+        }
+        ul > li {
+            display:inline;
+            margin-left:20px;
+            margin-right:20px;
+            
+            a {
+            color:white;
+            text-decoration:none;
+            font-size:20px;
+                &:hover {
+                    color:#ffffcc;
+                    font-weight:bold; 
+                }
+            }
+            
+        }
+    }
 }
 
-/* sidebar */
+/* jumbotron */
+.jumbotron {
+    font-family: 'Fugaz One', cursive;
+    width:100%;
+    height:700px;
+    text-align:center;
+    background-image:url("movietheater.jpg");
+    background-repeat: no-repeat;
+    .container {
+        padding-top:30px;
+        h1 {
+            font-size:70px;
+            color:white;
+        }
+        p {
+            font-size:30px;
+            color:white;
+        }
+        a {
+            background-color:black;
+            border-radius:10px;
+            font-size:30px;
+            text-decoration:none;
+            color:white;
+            padding:4px;
+            &:hover {
+                opacity:.4;
+            }
+        }
+    }
+}
+
+/* sidebar currently not in use */
 .sidebar {
     width:300px;
     height:600px;
@@ -60,7 +116,10 @@ html body {
     background-color:#990000;
     font-family:'Istok Web', sans-serif;
     .add {
-        background-color:#000066;
+        background-color:#990000;
+        &:hover {
+            background-color: #666666;
+        }
         height:40px;
         h1 {
             margin:0;
@@ -95,4 +154,139 @@ html body {
         }
     }
 }
-    
+
+/* show movie */
+.movieOne {
+    font-family:'Istok Web', sans-serif;
+    text-align:center;
+    h1 {
+        font-weight: bold;
+        font-size: 60px;
+    }
+    h3 {
+        font-size: 40px;
+    }
+    p {
+        font-size: 30px;
+        margin-left: 300px;
+        margin-right: 300px;
+    }
+    .links li {
+        display:inline;
+        margin:20px;
+    }
+    .links a {
+        text-decoration:none;
+        color:black;
+        font-size:20px;
+        &:hover {
+            font-weight:bold;
+        }
+    }
+}
+
+.moviesAll {
+    font-family:'Istok Web', sans-serif;
+    text-align:center;
+    ul {
+        width:700px;
+        margin: 0 auto;
+    }
+    .movie {
+        text-align:center;
+        border:1px black solid;
+        height:500px;
+        width:700px;
+    }
+    h1 {
+        font-size:80px;
+        margin-top:10px;
+        text-align:center;
+    }
+    ul li {
+        list-style: none;
+    }
+    h3 {
+        font-size: 40px;
+        font-weight: bold;
+    }
+    a {
+        text-decoration:none;
+        color: black;
+    }
+}
+
+/* form */
+.form {
+    font-family:'Istok Web', sans-serif;
+    width:700px;
+    margin:0 auto;
+    h1 {
+        font-size:80px;
+        text-align:center;
+    }
+    ul {
+        list-style-type:none;
+    }
+    li {
+        margin-top:20px;
+    }
+}
+
+.categoryHeader {
+    margin:0;
+    width:full;
+    background-color:white;
+    height:50px;
+    font-family: 'Istok Web', sans-serif;
+    h1 {
+        font-size:50px;
+        text-align:center;
+        margin:0;
+    }
+    ul {
+        margin:0;
+        text-align:center;
+    }
+    ul li {
+        display:inline;
+        margin-left:20px;
+        margin-right:20px;
+    }
+    a {
+        color:#990000;
+        text-decoration:none;
+        font-size:40px;
+        &:hover {
+            font-weight:bold;
+        
+        }
+    }
+}
+/* forms */
+input[type=submit] {
+    background-color:#003366;
+    height:35px;
+    width:110px;
+    font-size:20px;
+    color:white;
+    border-radius:10px;
+    border:1px white;
+    outline:none;
+    &:hover {
+        font-weight:bold;
+    }
+}
+
+input[type=text] {
+    outline:none;
+    border-radius:20px;
+    border:2px black solid;
+    font-size:30px;
+}
+
+textarea {
+    border-radius:20px;
+    border:2px black solid;
+    outline:none;
+}

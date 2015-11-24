@@ -1,0 +1,11 @@
+<%= provide(:title, @movie.title) %>
+<div class="movieOne">
+    <h1><%= @movie.title %></h1>
+    <%= image_tag @movie.picture.url if @movie.picture != nil %>
+    <h3>Category: <%= @movie.category %></h3>
+    <p>Description: <%= @movie.description %></p>
+    <ul class="links">
+        <li><%= link_to "DELETE", @movie, method: :delete, data: {confirm: "You sure about that?"} %></li>
+        <li><%= link_to "EDIT", edit_movie_path %></li>
+    </ul>
+</div>

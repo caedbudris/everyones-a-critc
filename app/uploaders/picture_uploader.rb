@@ -2,18 +2,28 @@
 
 class PictureUploader < CarrierWave::Uploader::Base
   include CarrierWave::MiniMagick
-  process resize_to_limit: [800, 800]
+  process resize_to_fit: [400, 400]
 
   # Include RMagick or MiniMagick support:
   # include CarrierWave::RMagick
   # include CarrierWave::MiniMagick
+  
+  CarrierWave.configure do |config|
+  config.fog_credentials = {
+    :aws_access_key_id => 'AKIAICLW5AYKOTLTKDSQ',
+    :aws_secret_access_key => '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',
+    :provider => 'AWS'
+  }
+  config.fog_directory = 'directoryname'
+  config.fog_public = true
+end
 
   # Choose what kind of storage to use for this uploader:
-  #if Rails.env.production?
-  #  storage :fog
-  #else
+  if Rails.env.production?
+    storage :fog
+  else
     storage :file
-  #end
+  end
 
   # Override the directory where uploaded files will be stored.
   # This is a sensible default for uploaders that are meant to be mounted:

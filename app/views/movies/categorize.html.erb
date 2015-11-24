@@ -1,0 +1,12 @@
+<%= provide(:title, @category.upcase) %>
+<%= render 'layouts/categoryHeader' %>
+<div class="moviesAll">
+<h1><%= @category.upcase %></h1>
+    <ul>
+        <% @movies.each do |movie| %>
+            <li class="movie">    
+                <%= render movie %>
+            </li>
+        <% end %>
+    </ul>
+</div>
