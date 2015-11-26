@@ -1,0 +1,34 @@
+<%= provide(:title, "Become a Critic") %>
+<div class="form">
+    <h1>Become a Critic</h1>
+    <p>Review movies to gain recognition for yourself and help out fellow movie fans</p>
+    <ul>
+        <li>
+            <%= form_for @critic do |c| %>
+        </li>
+    
+        <li>    
+            <%= c.label :name %>
+            <%= c.text_field :name %>
+        </li>
+    
+        <li>    
+            <%= c.label :email %>
+            <%= c.text_field :email %>
+        </li>
+    
+        <li>    
+            <%= c.label :password %>
+            <%= c.password_field :password %>
+        </li>
+        
+        <li>
+            <%= c.label :password_confirmation %>
+            <%= c.password_field :password_confirmation %>
+        </li>
+    
+        <li>
+            <%= c.submit "Sign Up" %>
+        </li>
+    <% end %>
+</div>

@@ -1,9 +1,23 @@
 Rails.application.routes.draw do
   
+  get 'critics/new'
+
+  get 'critics/create'
+
+  get 'critics/edit'
+
+  get 'critics/update'
+
+  get 'critics/show'
+
+  get 'critics/index'
+
   root "static_pages#home"
   
   resources :movies
   get 'movies/category/:category' => 'movies#categorize'
+  
+  resources :critics
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

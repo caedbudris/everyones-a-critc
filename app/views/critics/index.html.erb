@@ -1,0 +1,11 @@
+<%= provide(:title, "Critics") %>
+<div class="criticList">    
+    <h1>Critics</h1>
+    <%= @critics.each do |critic| %>
+    <ul>
+        <li class="criticOne">
+            <%= render critic %>
+        </li>
+    </ul>
+    <% end %>
+</div>
