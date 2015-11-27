@@ -1,4 +1,7 @@
 class CriticsController < ApplicationController
+  before_action :logged_in_critic, only: [:edit, :update, :destroy]
+  before_action :correct_critic, only: [:edit, :update, :destroy]
+  
   def new
     @critic = Critic.new
   end
@@ -45,4 +48,18 @@ class CriticsController < ApplicationController
     def critic_params
       params.require(:critic).permit(:name, :email, :password, :password_confirmation)
     end
+    
+    def logged_in_critic
+      unless logged_in?
+        redirect_to log_in_url
+      end
+    end
+    
+    def correct_critic
+      @critic = Critic.find(params[:id])
+      unless @critic == current_critic
+      redirect_to root_url
+      end
+    end
+    
 end

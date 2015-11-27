@@ -3,10 +3,17 @@
         <h1><%= link_to "Everyone's A Critic", root_path %></h1>
     </div>
     <div class="bottomh">
+        <% if logged_in? %>
+        <ul>
+            <li id="left"><%= link_to "View Profile", @current_critic %></li>
+            <li id="right"><%= link_to "Log Out", logout_path, method: :delete %></li>
+        </ul>
+        <% else %>
         <ul>
             <li id="left"><%= link_to "Become A Critic", new_critic_path %></li>
-            <li id="right"><%= link_to "Critic Log In", "#" %></li>
+            <li id="right"><%= link_to "Critic Log In", login_path %></li>
         </ul>
+        <% end %>
     </div>
     <div class="lowerh">
         <ul>

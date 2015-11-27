@@ -1,9 +1,13 @@
 <%= provide(:title, @critic.name) %>
 <div class='critics'>
     <h1><%= @critic.name %></h1>
-    <ul class="links">
-        <li><%= link_to "DELETE", @critic, method: :delete, data: {confirm: "You sure about that?"} %></li>
-        <li><%= link_to "EDIT", edit_critic_path %></li>
-    </ul>
+    <% if logged_in? %>
+        <% if @critic == @current_critic %>
+        <ul class="links">
+            <li><%= link_to "DELETE", @critic, method: :delete, data: {confirm: "You sure about that?"} %></li>
+            <li><%= link_to "EDIT", edit_critic_path %></li>
+        </ul>
+        <% end %>
+    <% end %>
 </div>
 

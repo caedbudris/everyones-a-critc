@@ -1,0 +1,22 @@
+<%= provide(:title, "Critic Log In") %>
+<div class="form">
+    <h1>Log In</h1>
+    <%= form_for(:session, url: login_path) do |c| %>
+    <ul>
+        <li>    
+            <%= c.label :email %>
+            <%= c.text_field :email %>
+        </li>
+    
+        <li>    
+            <%= c.label :password %>
+            <%= c.password_field :password %>
+        </li>
+    
+        <li>
+            <%= c.submit "Log In" %>
+        </li>
+    </ul>
+    <% end %>
+    <p>Not a Critic yet? <%= link_to "Sign up", new_critic_path %></p>
+</div>
