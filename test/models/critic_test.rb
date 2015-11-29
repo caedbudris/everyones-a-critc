@@ -15,6 +15,11 @@ class CriticTest < ActiveSupport::TestCase
     assert_not @critic.valid?
   end
   
+  test "Name should not be too long" do
+    @critic.name = "a" * 31
+    assert_not @critic.valid?
+  end
+  
   test "Email should be present" do
     @critic.email = " "
     assert_not @critic.valid?

@@ -9,6 +9,7 @@ class CriticsController < ApplicationController
   def create
     @critic = Critic.new(critic_params)
     if @critic.save
+      log_in @critic
       redirect_to @critic
     else
       render 'new'
@@ -21,8 +22,7 @@ class CriticsController < ApplicationController
 
   def update
     @critic = Critic.find(params[:id])
-    @critic.update(critic_params)
-    if @critic.save
+    if @critic.update(critic_params)
       redirect_to @critic
     else
       render 'edit'
@@ -51,7 +51,7 @@ class CriticsController < ApplicationController
     
     def logged_in_critic
       unless logged_in?
-        redirect_to log_in_url
+        redirect_to login_url
       end
     end
     
