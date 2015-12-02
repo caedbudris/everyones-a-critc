@@ -5,6 +5,9 @@ class Movie < ActiveRecord::Base
     mount_uploader(:picture, PictureUploader)
     validate(:picture_size)
     
+    has_many :favorites, dependent: :destroy
+    has_many :critics, through: :favorites
+    
     def self.search(search)
         if search
             Movie.where(['title LIKE ?', "%#{search}%"])

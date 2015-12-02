@@ -1,0 +1,7 @@
+<div id="favoriteform">
+    <% if current_critic.favorite?(@movie) %>
+        <%= render 'un_favorite' %>
+    <% else %>
+        <%= render 'favorite' %>
+    <% end %>
+</div>

@@ -302,7 +302,7 @@ textarea {
 
 /* critics */
 .critics {
-    width:700px;
+    width:1000px;
     margin:0 auto;
     text-align:center;
     font-family: 'Istok Web', sans-serif;
@@ -322,6 +322,12 @@ textarea {
         &:hover {
             font-weight:bold;
         }
+    }
+    .favorites {
+        float:left;
+    }
+    .movie {
+        list-style-type:none;
     }
 }
 

@@ -31,6 +31,7 @@ class CriticsController < ApplicationController
 
   def show
     @critic = Critic.find(params[:id])
+    @favorites = @critic.favorites
   end
 
   def index
@@ -42,7 +43,7 @@ class CriticsController < ApplicationController
     @critic.delete
     redirect_to critics_path
   end
-  
+    
   private
     
     def critic_params

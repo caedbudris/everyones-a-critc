@@ -2,6 +2,7 @@
 <div class="movieOne">
     <h1><%= @movie.title %></h1>
     <%= image_tag @movie.picture.url if @movie.picture != nil %>
+    <%= render 'favorite_form' if logged_in? %>
     <h3>Category: <%= @movie.category %></h3>
     <p>Description: <%= @movie.description %></p>
     <ul class="links">

@@ -6,6 +6,9 @@ class Critic < ActiveRecord::Base
     
     has_secure_password
     
+    has_many :favorites, dependent: :destroy
+    has_many :movies, through: :favorites
+    
     #before_save :downcase_email
     
     #def downcase_email
@@ -17,4 +20,23 @@ class Critic < ActiveRecord::Base
                                                   BCrypt::Engine.cost
         BCrypt::Password.create(string, cost: cost)
     end
+    
+    def favorite(movie)
+        favorites.create(movie_id: movie.id)
+    end
+    
+    #def un_favorite(movie)
+    #    favorites.find_by(movie_id: movie.id).destroy
+    #end
+    
+    def favorite?(movie)
+        favorite = favorites.find_by(movie_id: movie.id)
+        if favorite.nil?
+            return false
+        else
+            return true
+        end
+        #favorites.include?(movie)
+    end
+    
 end

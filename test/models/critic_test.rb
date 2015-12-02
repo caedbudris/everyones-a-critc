@@ -47,7 +47,7 @@ class CriticTest < ActiveSupport::TestCase
   #  @critic.save
   #  assert_not duplicate_critic.valid?
   #end
-  
+    
   test "Passwords should not be too short" do
     @critic.password = @critic.password_confirmation = "a" * 5
     assert_not @critic.valid?

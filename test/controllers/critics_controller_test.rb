@@ -5,6 +5,7 @@ class CriticsControllerTest < ActionController::TestCase
     
     def setup
         @critic = critics(:Bill)
+        @other_critic = critics(:Jim)
     end
     
     test "Should get show" do
@@ -18,6 +19,12 @@ class CriticsControllerTest < ActionController::TestCase
         assert_response :success
     end
     
+    test "Should redirect if not correct critic" do
+        log_in_as(@critic)
+        get :edit, id: @other_critic
+        assert_redirected_to root_url
+    end
+    
     test "Should get new" do
         get :new
         assert_response :success
@@ -28,7 +35,7 @@ class CriticsControllerTest < ActionController::TestCase
         assert_response :success
     end
     
-    test "Should get create critic" do
+    test "Should create critic" do
         assert_difference 'Critic.count' do
             post :create, critic: { name: 'James Critic', email: 'james@example.com', password: 'thisisapassword' }
         end
@@ -40,5 +47,5 @@ class CriticsControllerTest < ActionController::TestCase
             @critic.destroy
         end
     end
-
+    
 end

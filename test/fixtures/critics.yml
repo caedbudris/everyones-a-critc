@@ -1,11 +1,10 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 Bill:
-  id: 1
   name: Bill Thomas
   email: bill.thomas@example.com
   
   
-two:
-  name: MyString
-  email: MyString
+Jim:
+  name: Jim Johnson 
+  email: jim@example.com

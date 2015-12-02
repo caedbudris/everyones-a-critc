@@ -9,5 +9,15 @@
         </ul>
         <% end %>
     <% end %>
+    <div class="favorites">
+        <h1>Favorites</h1>
+        <ul>
+        <% @critic.movies.each do |movie| %>
+            <li class="movie">    
+                <%= render movie %>
+            </li>
+        <% end %>
+        </ul>
+    </div>
 </div>
 
