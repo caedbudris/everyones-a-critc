@@ -3,6 +3,7 @@
 Bill:
   name: Bill Thomas
   email: bill.thomas@example.com
+  password_digest: <%= Critic.digest('password') %>
   
   
 Jim:
