@@ -7,6 +7,7 @@ class Movie < ActiveRecord::Base
     
     has_many :favorites, dependent: :destroy
     has_many :critics, through: :favorites
+    has_many :reviews, dependent: :destroy
     
     def self.search(search)
         if search

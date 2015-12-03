@@ -8,6 +8,7 @@ class Critic < ActiveRecord::Base
     
     has_many :favorites, dependent: :destroy
     has_many :movies, through: :favorites
+    has_many :reviews
     
     #before_save :downcase_email
     
