@@ -1,0 +1,6 @@
+<div class="deleteReview">
+    <% if review.critic = current_critic %>
+    <%= link_to "X", review, method: :delete, data: {confirm: "You sure about that?"} %>
+    <% end %>
+</div>
+<p><%= review.content %></p>

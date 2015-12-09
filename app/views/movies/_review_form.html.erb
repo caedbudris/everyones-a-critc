@@ -1,0 +1,18 @@
+<div class="form">
+    <h1 class="smaller">Write a Review</h1>
+    <%= form_for(current_critic.reviews.new) do |r| %>
+    <ul>
+        <!-- hidden_field_tag :movie_id, @movie.id -->
+        <li class="hiddenField">
+            <%= r.text_field :movie_id, value: @movie.id %>
+        </li>
+        <li>
+            <%= r.text_area :content, placeholder: "Write your review...", size: "50x10" %>
+        </li>
+    
+        <li>
+            <%= r.submit "Submit Review" %>
+        </li>
+    </ul>
+    <% end %>
+</div>

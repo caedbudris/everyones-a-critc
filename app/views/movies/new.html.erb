@@ -10,7 +10,8 @@
         </li>
     
         <li>
-            <%= m.label :picture %>
+            Add a Picture
+            <%= m.label :picture, id: 'picture_label' %>
             <%= m.file_field :picture, accept: 'image/jpeg,image/gif,image/png' %>
         </li>
         
@@ -21,7 +22,7 @@
         </li>
     
         <li>
-            <%= m.label :description %>
+            <%= m.label :description, id: 'description_label' %>
             <%= m.text_area :description, size: "48x16" %>
         </li>
     

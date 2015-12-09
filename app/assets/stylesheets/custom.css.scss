@@ -241,6 +241,9 @@ html body {
     li {
         margin-top:20px;
     }
+    .smaller {
+        font-size:60px;
+    }
 }
 
 .categoryHeader {
@@ -274,7 +277,7 @@ html body {
     }
 }
 /* forms */
-input[type=submit] {
+input[type=submit], #picture_label {
     background-color:#003366;
     height:35px;
     font-size:20px;
@@ -285,6 +288,10 @@ input[type=submit] {
     &:hover {
         font-weight:bold;
     }
+}
+
+input[type=file] {
+    display: none;
 }
 
 input[type=text], input[type=password] {
@@ -298,6 +305,7 @@ textarea {
     border-radius:20px;
     border:2px black solid;
     outline:none;
+    font-size:20px;
 }
 
 /* critics */
@@ -329,6 +337,17 @@ textarea {
     .movie {
         list-style-type:none;
     }
+    .reviews {
+        float:right;
+        width:400px;
+        ul {
+            list-style-type:none;
+            padding:0;
+        }
+        li {
+            width:400px;
+        }
+    }
 }
 
 .criticList {
@@ -354,4 +373,37 @@ textarea {
             }
         }    
     }
+}
+
+.reviews {
+    list-style-type:none;
+}
+
+.review {
+    background-color:#cccccc;
+    width:700px;
+    margin: 0 auto;
+    border: 1px solid black;
+    margin-top:10px;
+    p {
+        width:700px;
+        margin:0;
+    }
+    .deleteReview {
+        float:right;
+        margin-top:10px;
+        margin-right:10px;
+        a {    
+            color:#003366;
+            font-weight:bold;
+            text-decoration:none;
+        }
+
+    }
+}
+.reviewHeader {
+    margin-bottom:10px;
+}
+.hiddenField {
+    display:none;
 }

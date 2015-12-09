@@ -9,4 +9,13 @@
         <li><%= link_to "DELETE", @movie, method: :delete, data: {confirm: "You sure about that?"} %></li>
         <li><%= link_to "EDIT", edit_movie_path %></li>
     </ul>
+    <%= render 'review_form' if logged_in? %>
+    <h1 class="reviewHeader">Reviews</h1>
+    <ul class="reviews">
+    <% @movie.reviews.each do |review| %>
+        <li class="review">
+            <%= render review %>
+        </li>
+    <% end %>
+    </ul>
 </div>

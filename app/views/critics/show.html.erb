@@ -9,15 +9,25 @@
         </ul>
         <% end %>
     <% end %>
-    <div class="favorites">
-        <h1>Favorites</h1>
-        <ul>
-        <% @critic.movies.each do |movie| %>
-            <li class="movie">    
-                <%= render movie %>
-            </li>
-        <% end %>
-        </ul>
-    </div>
+        <div class="favorites">
+            <h1>Favorites</h1>
+            <ul>
+            <% @critic.movies.each do |movie| %>
+                <li class="movie">    
+                    <%= render movie %>
+                </li>
+            <% end %>
+            </ul>
+        </div>
+        <div class="reviews">
+            <h1>Reviews</h1>
+            <ul>
+            <% @critic.reviews.each do |review| %>
+                <li class="review">    
+                    <%= render review %>
+                </li>
+            <% end %>
+            </ul>
+        </div> 
 </div>
 
